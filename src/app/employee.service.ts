@@ -24,14 +24,8 @@ export class EmployeeService {
     );
   }
 
-  findEmployee(empID): Observable<any> {
-    return this.http.get('http://192.168.0.2:8090/api/v1/employee/find/' + empID).map(res => {
-      if (res.json().hasOwnProperty('errors') || res.json().hasOwnProperty('message')) {
-        return false;
-      } else {
-        return res;
-      }
-    });
+  findEmployee(empID) {
+    return this.http.get('http://192.168.0.2:8090/api/v1/employee/find/' + empID);
   }
 
   updateEmployee(employeeObject: any): Observable<any> {
