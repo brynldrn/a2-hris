@@ -1,0 +1,44 @@
+<div class="login-box">
+  <div class="logo">
+    <a href="javascript:void(0);"><img src="assets/images/phase1title.png" alt="Phase 1 Philippines Logo" /> </a>
+    <br>
+    <small><strong>PhaseP</strong> Leave Tracker</small>
+  </div>
+  <div class="card">
+    <div class="body">
+      <form id="form" method="POST" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm">
+        <div class="msg">Sign in to start your session</div>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="material-icons">person</i>
+          </span>
+          <div class="form-line">
+            <input type="text" class="form-control" name="username" [(ngModel)]="user.username" placeholder="Username" required autofocus>
+          </div>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="material-icons">lock</i>
+          </span>
+          <div class="form-line">
+            <input type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="Password" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-8 p-t-5">
+            <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
+            <label for="rememberme">Remember Me</label>
+          </div>
+          <div class="col-xs-4">
+            <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+          </div>
+        </div>
+        <div class="row m-t-15 m-b--20" *ngIf="error">
+          <div class="col-xs-12 text-center">
+            <small class="text-danger">Invalid username / password</small>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

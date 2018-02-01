@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <h2>APPLY FOR A LEAVE</h2>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="header">
+
+        </div>
+        <div class="body">
+          <div class="row clearfix">
+            <div class="col-md-3">
+            <form method="post" name="form" (ngSubmit)="f.form.valid && submit(f)" #f="ngForm">
+              <div class="form-group">
+                <label for="">Leave Type</label>
+                <div class="form-line">
+                  <select name="leave_type" id="leave_type" class="form-control" [(ngModel)]="leave.leave_type" placeholder="Leave Type">
+                    <option value="VL">Vacation Leave</option>
+                    <option value="SL">Sick Leave</option>
+                    <option value="EL">Emergency Leave</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">Start Date</label>
+                <div class="form-line">
+                  <input type="date" class="form-control" placeholder="Start Date" name="start_date" [(ngModel)]="leave.start_date">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">End Date</label>
+                <div class="form-line">
+                  <input type="date" class="form-control" placeholder="End Date" name="end_date" [(ngModel)]="leave.end_date">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Notes</label>
+                <div class="form-line">
+                  <textarea name="leave_note" id="" cols="30" rows="10" class="form-control" style="resize: none;" [(ngModel)]="leave.leave_note"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary waves-effect waves-block">Submit</button>
+            </form>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MAIN CONTENT END -->
+</section>

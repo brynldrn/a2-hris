@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <h2>LEAVE APPLICATIONS LIST</h2>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="header">
+
+        </div>
+        <div class="body">
+          <div class="table-responsive">
+            <!-- <ng2-smart-table [settings]="settings" [source]="source">
+            </ng2-smart-table> -->
+            <table class="table table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Leave Type</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Notes</th>
+                  <th>Status</th>
+                  <th>Employee Signature</th>
+                  <th>Employee Name</th>
+                  <th>Approve</th>
+                  <th>Reject</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of data">
+                  <td>{{row.leave_type}}</td>
+                  <td>{{row.start_date}}</td>
+                  <td>{{row.end_date}}</td>
+                  <td>{{row.leave_note}}</td>
+                  <td>{{row.leave_status}}</td>
+                  <td>{{row.empID}}</td>
+                  <td>{{row.fullName}}</td>
+                  <td>
+                    <button *ngIf="row.leave_status === 'PENDING'" (click)="approve(row)" class="btn btn-success btn-circle waves-effect waves-circle" title="Approve">
+                      <i class="material-icons"> check </i>
+                    </button>
+                  </td>
+                  <td>
+                    <button *ngIf="row.leave_status === 'PENDING'" (click)="reject(row)" class="btn btn-danger btn-circle waves-effect waves-circle"
+                      title="Approve">
+                      <i class="material-icons"> close </i>
+                    </button>
+                  </td>
+                </tr>
+                <tr *ngIf="data.length === 0">
+                  <td colspan="9" class="text-center">No Data Available</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MAIN CONTENT END -->
+</section>
